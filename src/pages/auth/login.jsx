@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useState } from 'react'
 import { Form } from '../../components/form'
 import { TextField } from '../../components/text-field'
-import { authActions } from '../../store/auth/slices'
+import * as authActions from '../../store/auth/actions'
 
 
 export const LoginPage = () => {

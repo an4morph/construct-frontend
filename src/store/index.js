@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import authReducer from './slices/auth'
+import authReducer from './auth/slices'
 
 const authMiddleware = (store) => (next) => (action) => {
   if (action.type === 'auth/login/fulfilled') localStorage.setItem('token', action.payload?.token)

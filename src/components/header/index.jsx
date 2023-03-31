@@ -5,7 +5,7 @@ import { Logo } from "../logo"
 import styled from "styled-components"
 import { forwardRef } from "react"
 import { useDispatch } from "react-redux"
-import { authActions } from "../../store/slices/auth"
+import * as authActions from "../../store/auth/actions"
 
 const HeaderWrapper = styled.header`
   background-color: #fff;
