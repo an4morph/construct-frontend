@@ -1,7 +1,7 @@
+import { DevelopmentPlug } from "../../components/plug"
+
 export const ProfilePage = () => {
   return (
-    <div>
-      ProfilePage
-    </div>
+    <DevelopmentPlug title="Profile Page" />
   )
 }

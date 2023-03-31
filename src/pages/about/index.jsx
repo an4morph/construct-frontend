@@ -1,5 +1,7 @@
+import { DevelopmentPlug } from "../../components/plug"
+
 export const AboutPage = () => {
   return (
-    <div>AboutPage</div>
+    <DevelopmentPlug title="About Page" />
   )
 }

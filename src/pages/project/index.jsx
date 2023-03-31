@@ -1,7 +1,7 @@
+import { DevelopmentPlug } from "../../components/plug"
+
 export const ProjectPage = () => {
   return (
-    <div>
-      ProjectPage
-    </div>
+    <DevelopmentPlug title="Project Page" />
   )
 }

@@ -1,7 +1,7 @@
+import { DevelopmentPlug } from "../../components/plug"
+
 export const NotFoundPage = () => {
   return (
-    <div>
-      NotFoundPage
-    </div>
+    <DevelopmentPlug title="Not Found Page" />
   )
 }

@@ -1,7 +1,7 @@
+import { DevelopmentPlug } from "../../components/plug"
+
 export const SettingsPage = () => {
   return (
-    <div>
-      SettingsPage
-    </div>
+    <DevelopmentPlug title="Settings Page" />
   )
 }
