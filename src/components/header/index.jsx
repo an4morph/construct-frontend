@@ -4,6 +4,8 @@ import { Button } from "../button"
 import { Logo } from "../logo"
 import styled from "styled-components"
 import { forwardRef } from "react"
+import { useDispatch } from "react-redux"
+import { authActions } from "../../store/slices/auth"
 
 const HeaderWrapper = styled.header`
   background-color: #fff;
@@ -31,6 +33,8 @@ const LeftLink = styled(NavLink)`
 `
 
 export const Header = forwardRef((props, ref) => {
+  const dispatch = useDispatch()
+
   return (
     <HeaderWrapper ref={ref}>
       <Content>
@@ -42,7 +46,12 @@ export const Header = forwardRef((props, ref) => {
         
         <div>
           <NavLink to="/profile">My Profile</NavLink>
-          <LogoutButton variant="secondary">Log out</LogoutButton>
+          <LogoutButton
+            variant="secondary"
+            onClick={() => dispatch(authActions.logout())}
+          >
+            Log out
+          </LogoutButton>
         </div>
       </Content>
     </HeaderWrapper>
