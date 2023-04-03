@@ -35,9 +35,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     -webkit-tap-highlight-color: transparent;
     color: inherit;
-    &:hover {
-      cursor: pointer;
-    }
+    cursor: pointer;
     &:active {
       transform: scale(0.98);
     }

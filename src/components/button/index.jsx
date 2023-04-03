@@ -7,10 +7,13 @@ const NakedBtn = styled.button`
 `
 
 const PrimaryBtn = styled(NakedBtn)`
+  height: 50px;
+  font-size: 20px;
   background-color: ${({ theme }) => theme.colors.btn.primary.bg};
   color: ${({ theme }) => theme.colors.btn.primary.text};
   padding: 0 40px;
-  border-radius: 20px;
+  text-transform: uppercase;
+  border-radius: 25px;
   &:hover {
     background-color: ${({ theme }) => theme.colors.btn.primary.bgHover};
   }

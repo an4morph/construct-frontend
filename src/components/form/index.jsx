@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { media } from '../../styles/adaptive';
+import { Button } from '../button';
 
 const FormContainer = styled.form`
   display: flex;
@@ -17,13 +18,7 @@ const FormContainer = styled.form`
   `}
 `
 
-const Button = styled.button`
-  height: 50px;
-  background-color: ${({ theme }) => theme.colors.primary};
-  text-transform: uppercase;
-  color: #fff;
-  font-size: 20px;
-  border-radius: 25px;
+const SubmitButton = styled(Button)`
   width: 100%;
 `
 
@@ -49,7 +44,12 @@ export const Form = ({ children, error, onSubmit, title, btnText = 'Save', linkU
     <FormContainer>
       {title && <Title>{title}</Title>}
       {children}
-      <Button onClick={onSubmit}>{btnText}</Button>
+      <SubmitButton
+        variant="primary"
+        onClick={onSubmit}
+      >
+        {btnText}
+      </SubmitButton>
       {error && <Error>{error}</Error>}
       {linkUnder && (
         <LinkUnder to={linkUnder.path}>{linkUnder.text}</LinkUnder>
