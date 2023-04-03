@@ -17,10 +17,11 @@ export const LoginPage = () => {
   const { status, error } = useSelector(state => state.auth.login)
 
   useEffect(() => {
-    if (status === 'fulfilled') navigate('/')
-
-    return () => {
-      dispatch(authActions.resetLogin())
+    if (status === 'fulfilled') {
+      navigate('/')
+      return () => {
+        dispatch(authActions.resetLogin())
+      }
     }
   }, [status, navigate, dispatch])
 
@@ -41,7 +42,6 @@ export const LoginPage = () => {
       linkUnder={{ path: '/auth/signup', text: 'Go to sign up' }}
       error={error}
     >
-      <div>{status}: {error}</div>
       <TextField
         type="text"
         name="username"

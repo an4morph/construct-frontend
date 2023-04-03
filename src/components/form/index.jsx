@@ -39,7 +39,9 @@ const LinkUnder = styled(Link)`
 `
 
 const Error = styled.div`
-  background-color: ${({ theme }) => theme.colors.error};
+  color: ${({ theme }) => theme.colors.error};
+  font-size: 16px;
+  margin-top: 20px;
 `
 
 export const Form = ({ children, error, onSubmit, title, btnText = 'Save', linkUnder }) => {
