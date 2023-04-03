@@ -1,11 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Form } from '../../components/form'
 import { TextField } from '../../components/text-field'
-import * as authActions from '../../store/auth/actions'
+import { authActions } from '../../store/auth/slices'
+import { useNavigate } from 'react-router-dom'
 
 
 export const LoginPage = () => {
+  const navigate = useNavigate()
   const [form, setForm] = useState({
     username: '',
     password: '',
@@ -13,6 +15,14 @@ export const LoginPage = () => {
 
   const dispatch = useDispatch()
   const { status, error } = useSelector(state => state.auth.login)
+
+  useEffect(() => {
+    console.log(status)
+    if (status === 'fulfilled') {
+      console.log('status')
+      navigate('/')
+    }
+  }, [status, navigate])
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -29,6 +39,7 @@ export const LoginPage = () => {
       title="Log in"
       onSubmit={handleSubmit}
       linkUnder={{ path: '/auth/signup', text: 'Go to sign up' }}
+      error={error}
     >
       <div>{status}: {error}</div>
       <TextField

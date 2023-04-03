@@ -4,11 +4,13 @@ const SECONDARY_COLOR = '#c0d0f8'
 const GRAY1 = '#bbbbbb'
 const WHITE = '#FFFFFF'
 const BLACK = '#2C3343'
+const RED = '#c41b1b'
 
 export const defaultColorScheme = {
   primary: PRIMARY_COLOR,
   body: '#EEEEEE',
   text: BLACK,
+  error: RED,
   footer: {
     bg: BLACK,
     text: WHITE,

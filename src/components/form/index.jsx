@@ -38,12 +38,17 @@ const LinkUnder = styled(Link)`
   color: ${({ theme }) => theme.colors.primary};
 `
 
-export const Form = ({ children, onSubmit, title, btnText = 'Save', linkUnder }) => {
+const Error = styled.div`
+  background-color: ${({ theme }) => theme.colors.error};
+`
+
+export const Form = ({ children, error, onSubmit, title, btnText = 'Save', linkUnder }) => {
   return (
     <FormContainer>
       {title && <Title>{title}</Title>}
       {children}
       <Button onClick={onSubmit}>{btnText}</Button>
+      {error && <Error>{error}</Error>}
       {linkUnder && (
         <LinkUnder to={linkUnder.path}>{linkUnder.text}</LinkUnder>
       )}
