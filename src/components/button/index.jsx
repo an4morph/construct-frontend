@@ -18,6 +18,7 @@ const PrimaryBtn = styled(NakedBtn)`
     background-color: ${({ theme }) => theme.colors.btn.primary.bgHover};
   }
 `
+
 const SecondaryBtn = styled(NakedBtn)`
   background-color: ${({ theme }) => theme.colors.btn.secondary.bg};
   color: ${({ theme }) => theme.colors.btn.secondary.text};
@@ -29,7 +30,25 @@ const SecondaryBtn = styled(NakedBtn)`
   }
 `
 
-export const Button = ({ children, onClick, className, variant = 'naked' }) => {
+const IconBtn = styled(NakedBtn)`
+  background-color: ${({ theme }) => theme.colors.btn.secondary.bg};
+  color: ${({ theme }) => theme.colors.btn.secondary.text};
+  border: ${({ theme }) => `1px solid ${theme.colors.btn.secondary.border}`};
+  width: 40px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.btn.secondary.bgHover};
+  }
+  & svg {
+    width: 24px;
+    height: 24px;
+  }
+`
+
+export const Button = ({ children, icon, onClick, className, variant = 'naked' }) => {
   const props = {
     type: 'button',
     onClick,
@@ -48,6 +67,13 @@ export const Button = ({ children, onClick, className, variant = 'naked' }) => {
       <SecondaryBtn {...props}>
         {children}
       </SecondaryBtn>
+    )
+  }
+  if (variant === 'icon') {
+    return (
+      <IconBtn {...props}>
+        {icon}
+      </IconBtn>
     )
   }
   return (
