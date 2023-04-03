@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { Container } from "../../styles/adaptive"
 import { Button } from "../button"
 import { Logo } from "../logo"
@@ -34,6 +34,12 @@ const LeftLink = styled(NavLink)`
 
 export const Header = forwardRef((props, ref) => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    dispatch(authActions.logout())
+    navigate('/auth/login')
+  }
 
   return (
     <HeaderWrapper ref={ref}>
@@ -48,7 +54,7 @@ export const Header = forwardRef((props, ref) => {
           <NavLink to="/profile">My Profile</NavLink>
           <LogoutButton
             variant="secondary"
-            onClick={() => dispatch(authActions.logout())}
+            onClick={handleLogout}
           >
             Log out
           </LogoutButton>

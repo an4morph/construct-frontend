@@ -17,12 +17,12 @@ export const LoginPage = () => {
   const { status, error } = useSelector(state => state.auth.login)
 
   useEffect(() => {
-    console.log(status)
-    if (status === 'fulfilled') {
-      console.log('status')
-      navigate('/')
+    if (status === 'fulfilled') navigate('/')
+
+    return () => {
+      dispatch(authActions.resetLogin())
     }
-  }, [status, navigate])
+  }, [status, navigate, dispatch])
 
   const handleChange = (event) => {
     const { name, value } = event.target

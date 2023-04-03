@@ -50,6 +50,12 @@ export const authSlice = createSlice({
   reducers: {
     logout(state) {
       state.user = null
+    },
+    resetLogin(state) {
+      state.login = initialState.login
+    },
+    resetSignin(state) {
+      state.signin = initialState.signin
     }
   },
   extraReducers: (builder) => {
