@@ -17,7 +17,7 @@ export const useSizes = (options) => {
     let changed = false
     
     for (let key in sizes) {
-      const height = options[key].current.clientHeight
+      const height = options[key].current?.clientHeight
       if (sizes[key] !== height) {
         newSizes[key] = height
         changed = true
