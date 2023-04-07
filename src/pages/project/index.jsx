@@ -1,8 +1,10 @@
 import styled from "styled-components"
 import { ProjectSettings } from "../../components/project-settings"
-import { useState, useRef, useEffect } from "react"
+import { useRef, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { useSizes } from "../../hooks/useSizes"
+import { useDispatch, useSelector } from "react-redux"
+import { projectActions } from "../../store/project/slices"
 
 const Wrapper = styled.div`
   display: flex;
@@ -28,7 +30,8 @@ const IframeContainer = styled.div`
 `
 
 export const ProjectPage = () => {
-  const [data, setData] = useState(null)
+  const data = useSelector(state => state.project)
+  const dispatch = useDispatch()
   const { id } = useParams()
   const iframeRef = useRef(null)
   
@@ -37,10 +40,8 @@ export const ProjectPage = () => {
   })
 
   useEffect(() => {
-    fetch(`http://localhost:3789/projects/detail/${id}`)
-      .then(res => res.json())
-      .then(setData)
-  }, [id])
+    dispatch(projectActions.getProjectInfo(id))
+  }, [id, dispatch])
 
   return data && (
     <Wrapper>
@@ -50,7 +51,7 @@ export const ProjectPage = () => {
       <IframeContainer ref={iframeRef}>
         <iframe
           title="result"
-          src={`/project/${id}/settings`}
+          src={`/project/${id}/fullscreen`}
           style={{ 
             transform: `scale(${sizes.iframe.width ? sizes.iframe.width / window.innerWidth : 1})`,
             transformOrigin: 'top left',

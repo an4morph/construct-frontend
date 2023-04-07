@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import authReducer from './auth/slices'
+import projectReducer from './project/slices'
 
 const authMiddleware = (store) => (next) => (action) => {
   if (action.type === 'auth/login/fulfilled') localStorage.setItem('token', action.payload?.token)
@@ -11,6 +12,7 @@ const authMiddleware = (store) => (next) => (action) => {
 const store = configureStore({
   reducer: {
     auth: authReducer,
+    project: projectReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(authMiddleware)
 })

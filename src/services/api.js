@@ -1,6 +1,6 @@
 import qs from 'query-string'
 
-export const MAIN_ENDPOINT = 'http://localhost:1717'
+export const MAIN_ENDPOINT = 'http://localhost:3789'
 
 export const createUrl = (endpoint) => (route, prms = null) => {
   const params = prms ? `?${qs.stringify(prms)}` : ''

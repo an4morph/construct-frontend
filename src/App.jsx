@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { HomePage } from './pages/home'
 import { ProjectPage } from './pages/project'
-import { SettingsPage } from './pages/settings'
+import { ProjectFullScreenPage } from './pages/fullscreen'
 import { ProfilePage } from './pages/profile'
 import { NotFoundPage } from './pages/not-found'
 import { LoginPage } from './pages/auth/login'
@@ -27,10 +27,6 @@ function App() {
               element={<ProjectPage />}
             />
             <Route 
-              path="/project/:id/settings"
-              element={<SettingsPage />}
-            />
-            <Route 
               path="/profile"
               element={<ProfilePage />}
             />
@@ -49,6 +45,10 @@ function App() {
               element={<SignUpPage />}
             />
           </Route>
+          <Route 
+            path="/project/:id/fullscreen"
+            element={<ProjectFullScreenPage />}
+          />
           <Route 
             path="*"
             element={<NotFoundPage />} 
