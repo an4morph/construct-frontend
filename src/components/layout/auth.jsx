@@ -8,12 +8,12 @@ export const AuthLayout = () => {
   const footerRef = useRef()
 
   const sizes = useSizes({
-    footerH: footerRef,
+    footer: footerRef,
   })
 
   return (
     <div>      
-      <AuthContent $footerH={sizes.footerH}>
+      <AuthContent $footerH={sizes.footer.height}>
         <Outlet />
       </AuthContent>
       
