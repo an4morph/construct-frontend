@@ -10,8 +10,8 @@ export const MainLayout = () => {
   const footerRef = useRef()
 
   const sizes = useSizes({
-    headerH: headerRef,
-    footerH: footerRef,
+    header: headerRef,
+    footer: footerRef,
   })
 
   return (
@@ -19,8 +19,8 @@ export const MainLayout = () => {
       <Header ref={headerRef}/>
       
       <MainContent 
-        $footerH={sizes.footerH}
-        $headerH={sizes.headerH}
+        $footerH={sizes.footer.height}
+        $headerH={sizes.header.height}
       >
         <Outlet />
       </MainContent>
