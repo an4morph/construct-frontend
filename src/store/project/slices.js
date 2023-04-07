@@ -18,7 +18,15 @@ const getProjectInfo = createAsyncThunk('auth/getProjectInfo', async (id) => {
 export const projectSlice = createSlice({
   name: 'project',
   initialState,
-  reducers: {},
+  reducers: {
+    resetProjectInfo: (state) => {
+      state.project = null
+      state.getProjectInfo = {
+        status: null,
+        error: null
+      }
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(getProjectInfo.fulfilled, (state, action) => {
       state.project = action.payload
@@ -39,7 +47,7 @@ export const projectSlice = createSlice({
 })
 
 export const projectActions = {
-  getProjectInfo, 
+  getProjectInfo,
   ...projectSlice.actions
 }
 
