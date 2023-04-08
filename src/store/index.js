@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import authReducer from './auth/slices'
 import projectReducer from './project/slices'
+import projectListReducer from './project-list/slices'
 
 const authMiddleware = (store) => (next) => (action) => {
   if (action.type === 'auth/login/fulfilled') localStorage.setItem('token', action.payload?.token)
@@ -13,6 +14,7 @@ const store = configureStore({
   reducer: {
     auth: authReducer,
     project: projectReducer,
+    projectList: projectListReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(authMiddleware)
 })
