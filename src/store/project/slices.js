@@ -2,14 +2,14 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import * as api from '../../services/api'
 
 const initialState = {
-  project: null,
-  getProjectInfo: {
+  data: null,
+  getData: {
     status: null,
     error: null
   }
 }
 
-const getProjectInfo = createAsyncThunk('auth/getProjectInfo', async (id) => {
+const getData = createAsyncThunk('project/getData', async (id) => {
   const response = await api.getData(`/projects/detail/${id}`, { secure: true })
   const data = await response.json()
   return data
@@ -19,35 +19,35 @@ export const projectSlice = createSlice({
   name: 'project',
   initialState,
   reducers: {
-    resetProjectInfo: (state) => {
-      state.project = null
-      state.getProjectInfo = {
+    resetData: (state) => {
+      state.data = null
+      state.getData = {
         status: null,
         error: null
       }
     }
   },
   extraReducers: (builder) => {
-    builder.addCase(getProjectInfo.fulfilled, (state, action) => {
-      state.project = action.payload
-      state.getProjectInfo.status = 'fulfilled'
-      state.getProjectInfo.error = null
+    builder.addCase(getData.fulfilled, (state, action) => {
+      state.data = action.payload
+      state.getData.status = 'fulfilled'
+      state.getData.error = null
     })
-    builder.addCase(getProjectInfo.pending, (state, action) => {
-      state.project = null
-      state.getProjectInfo.status = 'pending'
-      state.getProjectInfo.error = null
+    builder.addCase(getData.pending, (state, action) => {
+      state.data = null
+      state.getData.status = 'pending'
+      state.getData.error = null
     })
-    builder.addCase(getProjectInfo.rejected, (state, action) => {
-      state.project = null
-      state.getProjectInfo.status = 'rejected'
-      state.getProjectInfo.error = action.payload
+    builder.addCase(getData.rejected, (state, action) => {
+      state.data = null
+      state.getData.status = 'rejected'
+      state.getData.error = action.payload
     })
   },
 })
 
 export const projectActions = {
-  getProjectInfo,
+  getData,
   ...projectSlice.actions
 }
 

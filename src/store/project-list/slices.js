@@ -9,7 +9,7 @@ const initialState = {
   }
 }
 
-const getData = createAsyncThunk('auth/getData', async (id) => {
+const getData = createAsyncThunk('project-list/getData', async (id) => {
   const response = await api.getData('/projects/list', { secure: true })
   const data = await response.json()
   return data

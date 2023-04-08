@@ -30,8 +30,8 @@ const IframeContainer = styled.div`
 `
 
 export const ProjectPage = () => {
-  const data = useSelector(state => state.project.project)
-  const { status } = useSelector(state => state.project.getProjectInfo)
+  const data = useSelector(state => state.project.data)
+  const { status } = useSelector(state => state.project.getData)
   const dispatch = useDispatch()
   const { id } = useParams()
   const iframeRef = useRef(null)
@@ -42,10 +42,10 @@ export const ProjectPage = () => {
 
   useEffect(() => {
     if (!status) {
-      dispatch(projectActions.getProjectInfo(id))
+      dispatch(projectActions.getData(id))
     }
     return () => {
-      projectActions.resetProjectInfo()
+      projectActions.resetData()
     }
   }, [id, dispatch, status])
 

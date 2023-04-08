@@ -5,17 +5,17 @@ import { useParams } from "react-router-dom"
 import { CoBlock } from "../../constructor/block"
 
 export const ProjectFullScreenPage = () => {
-  const data = useSelector(state => state.project.project)
-  const { status } = useSelector(state => state.project.getProjectInfo)
+  const data = useSelector(state => state.project.data)
+  const { status } = useSelector(state => state.project.getData)
   const dispatch = useDispatch()
   const { id } = useParams()
 
   useEffect(() => {
     if (!status) {
-      dispatch(projectActions.getProjectInfo(id))
+      dispatch(projectActions.getData(id))
     }
     return () => {
-      projectActions.resetProjectInfo()
+      projectActions.resetData()
     }
   }, [id, dispatch, status])
 
