@@ -22,6 +22,7 @@ const Date = styled.div`
 `
 
 export const ProjectListItem = ({ id, name, createdAt }) => {
+  console.log(createdAt)
   return (
     <Link to={`/project/${id}`}>
       <Line>

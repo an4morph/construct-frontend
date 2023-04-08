@@ -20,6 +20,9 @@ const FormContainer = styled.form`
 
 const SubmitButton = styled(Button)`
   width: 100%;
+  &:active {
+    cursor: wait;
+  }
 `
 
 const Title = styled.h1`

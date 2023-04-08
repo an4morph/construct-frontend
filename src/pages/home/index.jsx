@@ -15,6 +15,7 @@ const Grid = styled.div`
 
 export const HomePage = () => {
   const data = useSelector(state => state.projectList.data)
+  
   const { status } = useSelector(state => state.projectList.getData)
   const dispatch = useDispatch()
 
