@@ -17,7 +17,7 @@ export const Footer = forwardRef((props, ref) => {
   return (
     <FooterWrapper ref={ref}>
       <Content>
-        Polina's students 2023 :&#x29; ©
+        Polina's students 2023 :&#x29; &copy;
       </Content>
     </FooterWrapper>
   )
