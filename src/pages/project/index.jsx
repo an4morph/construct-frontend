@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom"
 import { useSizes } from "../../hooks/useSizes"
 import { useDispatch, useSelector } from "react-redux"
 import { projectActions } from "../../store/project/slices"
+import { Button } from "../../components/button"
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,6 +21,9 @@ const ResultWrapper = styled.div`
   padding-right: 40px;
 `
 const Title = styled.h2`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 20px;
   margin-bottom: 20px;
 `
@@ -52,20 +56,20 @@ export const ProjectPage = () => {
   return data && (
     <Wrapper>
       <ResultWrapper>
-        <Title>Project {data.name}: Result</Title>
+        <Title>Project {data.name}: Result <Button variant="primary" onClick={ () => window.location.href = `/project/${id}/fullscreen`}>{data.name}</Button> </Title>
 
-      <IframeContainer ref={iframeRef}>
-        <iframe
-          title="result"
-          src={`/project/${id}/fullscreen`}
-          style={{ 
-            transform: `scale(${sizes.iframe.width ? sizes.iframe.width / window.innerWidth : 1})`,
-            transformOrigin: 'top left',
-            width: `${window.innerWidth / sizes.iframe.width * 100}%`,
-            height: `${window.innerWidth / sizes.iframe.width * 100}%`
-          }}
-        />
-      </IframeContainer>
+        <IframeContainer ref={iframeRef}>
+          <iframe
+            title="result"
+            src={`/project/${id}/fullscreen`}
+            style={{ 
+              transform: `scale(${sizes.iframe.width ? sizes.iframe.width / window.innerWidth : 1})`,
+              transformOrigin: 'top left',
+              width: `${window.innerWidth / sizes.iframe.width * 100}%`,
+              height: `${window.innerWidth / sizes.iframe.width * 100}%`
+            }}
+          />
+        </IframeContainer>
 
       </ResultWrapper>
       
