@@ -6,6 +6,7 @@ import { useSizes } from "../../hooks/useSizes"
 import { useDispatch, useSelector } from "react-redux"
 import { projectActions } from "../../store/project/slices"
 import { Button } from "../../components/button"
+import { Link } from "react-router-dom"
 
 const Wrapper = styled.div`
   display: flex;
@@ -56,7 +57,11 @@ export const ProjectPage = () => {
   return data && (
     <Wrapper>
       <ResultWrapper>
-        <Title>Project {data.name}: Result <Button variant="primary" onClick={ () => window.location.href = `/project/${id}/fullscreen`}>{data.name}</Button> </Title>
+        <Title>Project {data.name}: Result 
+          <Link to={`/project/${id}/fullscreen`}>
+            <Button variant="primary">Demo of {data.name}</Button>
+          </Link> 
+        </Title>
 
         <IframeContainer ref={iframeRef}>
           <iframe
