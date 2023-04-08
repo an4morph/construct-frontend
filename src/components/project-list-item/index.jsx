@@ -17,16 +17,18 @@ const Name = styled.div`
   font-weight: 700;
 `
 
-const Date = styled.div`
+const Date1 = styled.div`
   font-size: 18px;
 `
 
 export const ProjectListItem = ({ id, name, createdAt }) => {
+  const date = new Date(createdAt);
+  const formattedDate = `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getUTCFullYear()} ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
   return (
     <Link to={`/project/${id}`}>
       <Line>
         <Name>{name}</Name>
-        <Date>{createdAt}</Date>
+        <Date1>{formattedDate}</Date1>
       </Line>
     </Link>
   )
