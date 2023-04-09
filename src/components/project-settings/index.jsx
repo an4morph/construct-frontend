@@ -13,12 +13,14 @@ export const ProjectSettings = ({ blocks = [] }) => {
     <Wrapper>
       <Title>Settings</Title>
       {
-        blocks.map(({ id, name, data }, index) => (
+        blocks.map(({ id, name, data }, index) => data
+        ? (
           <SettingsBlock key={id}>
             <SubTitle>{index + 1}. {name}</SubTitle>
             <SettingsFields name={name} data={data} />
           </SettingsBlock>
-        ))
+        ) 
+        : null)
       }
     </Wrapper>
   )

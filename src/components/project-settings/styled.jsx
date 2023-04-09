@@ -6,6 +6,8 @@ export const Wrapper = styled.div`
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px 0 rgb(0, 0, 0, 0.05);
+  max-height: 700px;
+  overflow: scroll;
 `
 export const Title = styled.h2`
   font-size: 20px;

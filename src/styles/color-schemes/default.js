@@ -35,6 +35,7 @@ export const defaultColorScheme = {
       bg: WHITE,
       itemBg: GRAY2,
       text: BLACK,
+      fieldSeparator: GRAY1,
     }
   },
   dev: {
