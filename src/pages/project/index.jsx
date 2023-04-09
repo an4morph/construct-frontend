@@ -58,7 +58,7 @@ export const ProjectPage = () => {
     <Wrapper>
       <ResultWrapper>
         <Title>
-          Project {data.name}: Result 
+          Project "{data.name}"
           <Link to={`/project/${id}/fullscreen`}>
             <Button variant="primary">Demo of {data.name}</Button>
           </Link> 
