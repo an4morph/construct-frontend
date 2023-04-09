@@ -52,7 +52,7 @@ export const ProjectPage = () => {
   return data && (
     <Wrapper>
       <ResultWrapper>
-        <Title>Project {data.name}: Result</Title>
+        <Title>Project "{data.name}"</Title>
 
       <IframeContainer ref={iframeRef}>
         <iframe
