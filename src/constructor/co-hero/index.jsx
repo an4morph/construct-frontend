@@ -1,18 +1,18 @@
 import styled from "styled-components"
-import { Container, media } from '../../styles/adaptive'
+import { Container, media } from "../../styles/adaptive"
 
 const defaultValues = {
-  bgColor: '#FFFFFF',
+  bgColor: "#FFFFFF",
   title: {
-    content: 'Title',
-    color: '#000000',
-    size: 24
+    content: "Title",
+    color: "#000000",
+    size: 24,
   },
   text: {
-    content: 'Lorem inpsum dolor sit amet',
-    color: '#000000',
-    size: 18
-  }
+    content: "Lorem inpsum dolor sit amet",
+    color: "#000000",
+    size: 18,
+  },
 }
 
 const Wrapper = styled.section`
@@ -68,8 +68,8 @@ const Image = styled.img`
   `}
 `
 
-export const CoHero = ({ 
-  bgColor, text, title, image
+export const CoHero = ({
+  bgColor, text, title, image,
 }) => {
   return (
     <Wrapper $bgColor={bgColor}>
