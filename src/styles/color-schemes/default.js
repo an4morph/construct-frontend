@@ -1,14 +1,14 @@
-const PRIMARY_COLOR = '#6285DF'
-const PRIMARY_COLOR_HOVER = '#4e6fc2'
-const SECONDARY_COLOR = '#c0d0f8'
-const GRAY1 = '#bbbbbb'
-const WHITE = '#FFFFFF'
-const BLACK = '#2C3343'
-const RED = '#c41b1b'
+const PRIMARY_COLOR = "#6285DF"
+const PRIMARY_COLOR_HOVER = "#4e6fc2"
+const SECONDARY_COLOR = "#c0d0f8"
+const GRAY1 = "#bbbbbb"
+const WHITE = "#FFFFFF"
+const BLACK = "#2C3343"
+const RED = "#c41b1b"
 
 export const defaultColorScheme = {
   primary: PRIMARY_COLOR,
-  body: '#EEEEEE',
+  body: "#EEEEEE",
   text: BLACK,
   error: RED,
   footer: {
@@ -27,11 +27,11 @@ export const defaultColorScheme = {
       bgHover: SECONDARY_COLOR,
       border: SECONDARY_COLOR,
       borderHover: SECONDARY_COLOR,
-    }
+    },
   },
   dev: {
     bg: WHITE,
     text: BLACK,
     icon: GRAY1,
-  }
+  },
 }

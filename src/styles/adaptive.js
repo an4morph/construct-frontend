@@ -1,4 +1,4 @@
-import styled, { css }  from "styled-components"
+import styled, { css } from "styled-components"
 
 export const breakpoints = {
   xs: 0,
@@ -15,9 +15,8 @@ export const media = Object.keys(breakpoints).reduce((acc, label) => {
       ${css(...args)}
     }
   `
-  return acc;
+  return acc
 }, {})
-
 
 export const Container = styled.div`
   width: 100%;
