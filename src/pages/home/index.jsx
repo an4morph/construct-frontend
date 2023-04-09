@@ -23,7 +23,6 @@ export const HomePage = () => {
       dispatch(projectListActions.getData())
     }
   }, [dispatch, status])
-  console.log(data)
 
   return (
     <>

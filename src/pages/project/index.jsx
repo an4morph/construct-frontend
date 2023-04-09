@@ -79,7 +79,7 @@ export const ProjectPage = () => {
 
       </ResultWrapper>
       
-      <ProjectSettings data={data.blocks}/>
+      <ProjectSettings blocks={data.blocks}/>
     </Wrapper>
   )
 }
