@@ -49,7 +49,7 @@ export const Header = forwardRef((props, ref) => {
         </Left>
         
         <div>
-          <NavLink to="/profile">My Profile</NavLink>
+          <LineLink to="/profile">My Profile</LineLink>
           <LogoutButton
             variant="secondary"
             onClick={handleLogout}
