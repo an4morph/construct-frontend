@@ -6,6 +6,7 @@ import styled from "styled-components"
 import { forwardRef } from "react"
 import { useDispatch } from "react-redux"
 import { authActions } from "../../store/auth/slices"
+import { LineLink } from "../line-link"
 
 const HeaderWrapper = styled.header`
   background-color: #fff;
@@ -46,8 +47,8 @@ export const Header = forwardRef((props, ref) => {
       <Content>
         <Left>
           <Logo />
-          <LeftLink to="/">Go to Dashboard</LeftLink>
-          <LeftLink to="/about">About</LeftLink>
+          <LineLink to="/">Go to Dashboard</LineLink>
+          <LineLink to="/about">About</LineLink>
         </Left>
         
         <div>
