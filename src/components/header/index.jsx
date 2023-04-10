@@ -29,9 +29,6 @@ const Left = styled.div`
 const LogoutButton = styled(Button)`
   margin-left: 40px;
 `
-const LeftLink = styled(NavLink)`
-  margin-left: 40px;
-`
 
 export const Header = forwardRef((props, ref) => {
   const dispatch = useDispatch()
