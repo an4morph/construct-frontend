@@ -45,7 +45,7 @@ export const Header = forwardRef((props, ref) => {
     <HeaderWrapper ref={ref}>
       <Content>
         <Left>
-        <NavLink to="/"><Logo /></NavLink>
+          <NavLink to="/"><Logo /></NavLink>
           <LeftLink to="/">Go to Dashboard</LeftLink>
           <LeftLink to="/about">About</LeftLink>
         </Left>
