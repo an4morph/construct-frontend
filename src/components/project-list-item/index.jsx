@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import styled from "styled-components"
+import { CalendarIcon } from '../icons/calendar';
 
 const Line = styled.div`
   display: flex;
@@ -20,13 +21,19 @@ const Name = styled.div`
 const Date = styled.div`
   font-size: 18px;
 `
-
+const StyledCalendarIcon = styled(CalendarIcon)`
+  color: gray;
+  width: 23px;
+  height: 23px;
+  display: flex;
+  align-items: center;
+`
 export const ProjectListItem = ({ id, name, createdAt }) => {
   return (
     <Link to={`/project/${id}`}>
       <Line>
         <Name>{name}</Name>
-        <Date>{createdAt}</Date>
+        <Date><StyledCalendarIcon /> {createdAt}</Date>
       </Line>
     </Link>
   )
