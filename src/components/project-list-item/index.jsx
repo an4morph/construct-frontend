@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import styled from "styled-components"
+import dateFormat, { masks } from "dateformat";
 
 const Line = styled.div`
   display: flex;
@@ -22,11 +23,12 @@ const Date = styled.div`
 `
 
 export const ProjectListItem = ({ id, name, createdAt }) => {
+  const formattedDate = dateFormat(createdAt, "dd/mm/yyyy, H:MM");
   return (
     <Link to={`/project/${id}`}>
       <Line>
         <Name>{name}</Name>
-        <Date>{createdAt}</Date>
+        <Date>{formattedDate}</Date>
       </Line>
     </Link>
   )

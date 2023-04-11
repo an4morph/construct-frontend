@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom"
+import { useNavigate, NavLink } from "react-router-dom"
 import { Container } from "../../styles/adaptive"
 import { Button } from "../button"
 import { Logo } from "../logo"
@@ -6,6 +6,7 @@ import styled from "styled-components"
 import { forwardRef } from "react"
 import { useDispatch } from "react-redux"
 import { authActions } from "../../store/auth/slices"
+import { LineLink } from "../line-link"
 
 const HeaderWrapper = styled.header`
   background-color: #fff;
@@ -28,7 +29,7 @@ const Left = styled.div`
 const LogoutButton = styled(Button)`
   margin-left: 40px;
 `
-const LeftLink = styled(NavLink)`
+const LeftLink = styled(LineLink)`
   margin-left: 40px;
 `
 
@@ -45,13 +46,13 @@ export const Header = forwardRef((props, ref) => {
     <HeaderWrapper ref={ref}>
       <Content>
         <Left>
-          <Logo />
+          <NavLink to="/"><Logo /></NavLink>
           <LeftLink to="/">Go to Dashboard</LeftLink>
           <LeftLink to="/about">About</LeftLink>
         </Left>
         
         <div>
-          <NavLink to="/profile">My Profile</NavLink>
+          <LeftLink to="/profile">My Profile</LeftLink>
           <LogoutButton
             variant="secondary"
             onClick={handleLogout}

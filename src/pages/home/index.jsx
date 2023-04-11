@@ -23,11 +23,10 @@ export const HomePage = () => {
       dispatch(projectListActions.getData())
     }
   }, [dispatch, status])
-  console.log(data)
 
   return (
     <>
-      <Title>Dashboard</Title>
+      <Title>Dashboard {data?.length} </Title>
       <Grid>
         {
           data && data.map((project) => (

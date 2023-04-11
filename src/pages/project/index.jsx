@@ -58,9 +58,9 @@ export const ProjectPage = () => {
     <Wrapper>
       <ResultWrapper>
         <Title>
-          Project {data.name}: Result 
+          Project "{data.name}"
           <Link to={`/project/${id}/fullscreen`}>
-            <Button variant="primary">Demo of {data.name}</Button>
+            <Button variant="primary">fullscreen</Button>
           </Link> 
         </Title>
 
@@ -79,7 +79,7 @@ export const ProjectPage = () => {
 
       </ResultWrapper>
       
-      <ProjectSettings data={data.blocks}/>
+      <ProjectSettings blocks={data.blocks}/>
     </Wrapper>
   )
 }
