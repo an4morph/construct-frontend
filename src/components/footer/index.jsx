@@ -7,17 +7,19 @@ const FooterWrapper = styled.footer`
   color: ${({ theme }) => theme.colors.footer.text};
 `
 const Content = styled(Container)`
-  display: flex;
+  display:flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 40px;
+  
 `
 
 export const Footer = forwardRef((props, ref) => {
   return (
     <FooterWrapper ref={ref}>
       <Content>
-        Polina's students 2023 :&#x29; &copy;
+       <div>Polina's students :&#x29;</div> 
+        <div> 2023  &copy;</div>
       </Content>
     </FooterWrapper>
   )
