@@ -11,7 +11,6 @@ const Content = styled(Container)`
   align-items: center;
   justify-content: space-between;
   padding: 40px;
-  
 `
 
 export const Footer = forwardRef((props, ref) => {
