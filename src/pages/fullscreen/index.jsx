@@ -22,42 +22,31 @@ export const ProjectFullScreenPage = () => {
   }, [id, dispatch, status]);
 
   const LinkGoHome = styled.div`
-    border: 1px solid;
     width: 100%;
-    height: 70px;
-    background-color: #6f9299;
+    height: 50px;
+    background-color: #6f68ee;
     border: none;
     position: sticky;
     top: 0px;
     display: flex;
     align-items: center;
-    padding: 10px 50px;
+    padding: 8px 30px ;
     justify-content: space-between;
 
     & a {
-      background-color: #ffffff87;
-      border-radius: 100px;
-      padding: 4px;
-    }
-    & a:active{
-      background-color: rgb(98, 133, 223);
       color: white;
     }
-    & p{
-      background-color: #0000007a;
-      border-radius: 10px;
-      padding: 10px;
-      color: white;
 
+    & p {
+      color: #f5f513;
     }
-    
   `;
 
   return (
     data && (
       <div>
         <LinkGoHome>
-          <Link to="/">⮪ Вернуться на главную страницу</Link>
+          <Link to="/">⭠  Go to home page</Link>
           <p>This is the fullscreen version of progect</p>
         </LinkGoHome>
 
