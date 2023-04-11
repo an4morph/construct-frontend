@@ -26,7 +26,7 @@ export const HomePage = () => {
 
   return (
     <>
-      <Title>Dashboard</Title>
+      <Title>Dashboard {data?.length} </Title>
       <Grid>
         {
           data && data.map((project) => (
