@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 
 const StyledLink = styled(NavLink)`
-  margin-left: 40px;
   text-decoration: none;
   position: relative;
   &.active {
@@ -22,12 +21,10 @@ const StyledLink = styled(NavLink)`
     transition: all 250ms;
     width: 100%;
   }
-}
-
 `
 
-export const LineLink = ({ children, to}) => {
+export const LineLink = ({ className,children, to}) => {
     return (
-        <StyledLink to={to}>{children}</StyledLink>
+        <StyledLink to={to} className={className}>{children}</StyledLink>
     )
 }

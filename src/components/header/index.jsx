@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { Container } from "../../styles/adaptive"
 import { Button } from "../button"
 import { Logo } from "../logo"
@@ -29,6 +29,9 @@ const Left = styled.div`
 const LogoutButton = styled(Button)`
   margin-left: 40px;
 `
+const LeftLink = styled(LineLink)`
+  margin-left: 40px;
+`
 
 export const Header = forwardRef((props, ref) => {
   const dispatch = useDispatch()
@@ -44,12 +47,12 @@ export const Header = forwardRef((props, ref) => {
       <Content>
         <Left>
           <Logo />
-          <LineLink to="/">Go to Dashboard</LineLink>
-          <LineLink to="/about">About</LineLink>
+          <LeftLink to="/">Go to Dashboard</LeftLink>
+          <LeftLink to="/about">About</LeftLink>
         </Left>
         
         <div>
-          <LineLink to="/profile">My Profile</LineLink>
+          <LeftLink to="/profile">My Profile</LeftLink>
           <LogoutButton
             variant="secondary"
             onClick={handleLogout}
