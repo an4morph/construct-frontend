@@ -30,13 +30,13 @@ export const ProjectFullScreenPage = () => {
     top: 0px;
     display: flex;
     align-items: center;
-    padding: 8px 20px ;
+    padding: 8px 20px;
     justify-content: space-between;
 
     & a {
       color: white;
     }
-    &:hover{
+    & a:hover {
       color: #f5f513;
     }
 
@@ -49,7 +49,7 @@ export const ProjectFullScreenPage = () => {
     data && (
       <div>
         <LinkGoHome>
-          <Link to="/">⭠  Go to home page</Link>
+          <Link to="/">⭠ Go to home page</Link>
           <p>This is the fullscreen version of progect</p>
         </LinkGoHome>
 
