@@ -36,6 +36,9 @@ export const ProjectFullScreenPage = () => {
     & a {
       color: white;
     }
+    &:hover{
+      color: #f5f513;
+    }
 
     & p {
       color: #f5f513;
