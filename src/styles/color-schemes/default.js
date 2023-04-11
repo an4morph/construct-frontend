@@ -2,6 +2,7 @@ const PRIMARY_COLOR = '#6285DF'
 const PRIMARY_COLOR_HOVER = '#4e6fc2'
 const SECONDARY_COLOR = '#c0d0f8'
 const GRAY1 = '#bbbbbb'
+const GRAY2 = '#efefef'
 const WHITE = '#FFFFFF'
 const BLACK = '#2C3343'
 const RED = '#c41b1b'
@@ -27,6 +28,13 @@ export const defaultColorScheme = {
       bgHover: SECONDARY_COLOR,
       border: SECONDARY_COLOR,
       borderHover: SECONDARY_COLOR,
+    }
+  },
+  project: {
+    settings: {
+      bg: WHITE,
+      itemBg: GRAY2,
+      text: BLACK,
     }
   },
   dev: {

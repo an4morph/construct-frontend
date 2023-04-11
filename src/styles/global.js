@@ -47,19 +47,5 @@ export const GlobalStyle = createGlobalStyle`
     &.active {
       color: ${({ theme }) => theme.colors.primary};
     }
-    &::after {
-      transition: all 250ms;
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: ${({ theme }) => theme.colors.primary};
-    }
-    &:hover::after {
-      transition: all 250ms;
-      width: 100%;
-    }
   }
 `
