@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, NavLink } from "react-router-dom"
 import { Container } from "../../styles/adaptive"
 import { Button } from "../button"
 import { Logo } from "../logo"
