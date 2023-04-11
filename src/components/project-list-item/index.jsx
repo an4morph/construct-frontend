@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import styled from "styled-components"
+import dateFormat, { masks } from "dateformat";
 
 const Line = styled.div`
   display: flex;
@@ -17,18 +18,17 @@ const Name = styled.div`
   font-weight: 700;
 `
 
-const Date1 = styled.div`
+const Date = styled.div`
   font-size: 18px;
 `
 
 export const ProjectListItem = ({ id, name, createdAt }) => {
-  const date = new Date(createdAt);
-  const formattedDate = `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getUTCFullYear()} ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
+  const formattedDate = dateFormat(createdAt);
   return (
     <Link to={`/project/${id}`}>
       <Line>
         <Name>{name}</Name>
-        <Date1>{formattedDate}</Date1>
+        <Date>{formattedDate}</Date>
       </Line>
     </Link>
   )
