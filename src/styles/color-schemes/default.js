@@ -33,5 +33,10 @@ export const defaultColorScheme = {
     bg: WHITE,
     text: BLACK,
     icon: GRAY1,
+  },
+  about: {
+    bg: WHITE,
+    text: BLACK,
+    border: GRAY1,
   }
 }
