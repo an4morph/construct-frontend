@@ -30,7 +30,7 @@ export const ProjectFullScreenPage = () => {
     top: 0px;
     display: flex;
     align-items: center;
-    padding: 8px 30px ;
+    padding: 8px 20px ;
     justify-content: space-between;
 
     & a {
