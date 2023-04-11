@@ -23,7 +23,7 @@ const Date = styled.div`
 `
 
 export const ProjectListItem = ({ id, name, createdAt }) => {
-  const formattedDate = dateFormat(createdAt);
+  const formattedDate = dateFormat(createdAt, "dd/mm/yyyy, H:MM");
   return (
     <Link to={`/project/${id}`}>
       <Line>
