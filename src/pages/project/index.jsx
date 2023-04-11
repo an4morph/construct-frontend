@@ -60,7 +60,7 @@ export const ProjectPage = () => {
         <Title>
           Project "{data.name}"
           <Link to={`/project/${id}/fullscreen`}>
-            <Button variant="primary">Demo of {data.name}</Button>
+            <Button variant="primary">fullscreen</Button>
           </Link> 
         </Title>
 
