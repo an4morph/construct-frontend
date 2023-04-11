@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { useEffect} from "react"
+import { useEffect } from "react"
 import styled from "styled-components"
 import { projectListActions } from "../../store/project-list/slices"
 import { ProjectListItem } from '../../components/project-list-item'
