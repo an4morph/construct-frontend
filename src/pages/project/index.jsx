@@ -1,12 +1,12 @@
-import styled from "styled-components"
-import { ProjectSettings } from "../../components/project-settings"
-import { useRef, useEffect } from "react"
-import { useParams } from "react-router-dom"
-import { useSizes } from "../../hooks/useSizes"
-import { useDispatch, useSelector } from "react-redux"
-import { projectActions } from "../../store/project/slices"
-import { Button } from "../../components/button"
-import { Link } from "react-router-dom"
+import styled from "styled-components";
+import { ProjectSettings } from "../../components/project-settings";
+import { useRef, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useSizes } from "../../hooks/useSizes";
+import { useDispatch, useSelector } from "react-redux";
+import { projectActions } from "../../store/project/slices";
+import { Button } from "../../components/button";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,69 +17,77 @@ const Wrapper = styled.div`
   & > *:nth-child(2) {
     width: 30%;
   }
-`
+`;
 const ResultWrapper = styled.div`
   padding-right: 40px;
-`
+`;
 const Title = styled.h2`
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 20px;
   margin-bottom: 20px;
-`
+`;
 const IframeContainer = styled.div`
   border: 1px solid;
   width: 100%;
   height: 500px;
-`
+`;
+
 
 export const ProjectPage = () => {
-  const data = useSelector(state => state.project.data)
-  const { status } = useSelector(state => state.project.getData)
-  const dispatch = useDispatch()
-  const { id } = useParams()
-  const iframeRef = useRef(null)
-  
+  const data = useSelector((state) => state.project.data);
+  const { status } = useSelector((state) => state.project.getData);
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  const iframeRef = useRef(null);
+
   const sizes = useSizes({
-    iframe: iframeRef
-  })
+    iframe: iframeRef,
+  });
 
   useEffect(() => {
     if (!status) {
-      dispatch(projectActions.getData(id))
+      dispatch(projectActions.getData(id));
     }
     return () => {
-      projectActions.resetData()
-    }
-  }, [id, dispatch, status])
+      projectActions.resetData();
+    };
+  }, [id, dispatch, status]);
 
-  return data && (
-    <Wrapper>
-      <ResultWrapper>
-        <Title>
-          Project "{data.name}"
-          <Link to={`/project/${id}/fullscreen`}>
-            <Button variant="primary">Demo of {data.name}</Button>
-          </Link> 
-        </Title>
+  return (
+    data && (
+      <Wrapper>
+        <ResultWrapper>
+          <Title>
+            Project "{data.name}"
+            <Link to={`/project/${id}/fullscreen`}>
+              
+              <Button variant="primary"> Demo of {data.name}</Button>
+            </Link>
+          </Title>
 
-        <IframeContainer ref={iframeRef}>
-          <iframe
-            title="result"
-            src={`/project/${id}/fullscreen`}
-            style={{ 
-              transform: `scale(${sizes.iframe.width ? sizes.iframe.width / window.innerWidth : 1})`,
-              transformOrigin: 'top left',
-              width: `${window.innerWidth / sizes.iframe.width * 100}%`,
-              height: `${window.innerWidth / sizes.iframe.width * 100}%`
-            }}
-          />
-        </IframeContainer>
-
-      </ResultWrapper>
+          <IframeContainer ref={iframeRef}>
       
-      <ProjectSettings blocks={data.blocks}/>
-    </Wrapper>
-  )
-}
+            <iframe
+              title="result"
+              src={`/project/${id}/fullscreen`}
+              style={{
+                transform: `scale(${
+                  sizes.iframe.width
+                    ? sizes.iframe.width / window.innerWidth
+                    : 1
+                })`,
+                transformOrigin: "top left",
+                width: `${(window.innerWidth / sizes.iframe.width) * 100}%`,
+                height: `${(window.innerWidth / sizes.iframe.width) * 100}%`,
+              }}
+            />
+          </IframeContainer>
+        </ResultWrapper>
+
+        <ProjectSettings blocks={data.blocks} />
+      </Wrapper>
+    )
+  );
+};
