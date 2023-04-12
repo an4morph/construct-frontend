@@ -17,25 +17,26 @@ const Wrapper = styled.div`
   & > *:nth-child(2) {
     width: 30%;
   }
-`;
+`
 const ResultWrapper = styled.div`
   padding-right: 40px;
-`;
+`
 const Title = styled.h2`
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 20px;
   margin-bottom: 20px;
-`;
+`
 const IframeContainer = styled.div`
   border: 1px solid;
   width: 100%;
   height: 500px;
-`;
+`
 
 
 export const ProjectPage = () => {
+
   const data = useSelector((state) => state.project.data);
   const { status } = useSelector((state) => state.project.getData);
   const dispatch = useDispatch();
@@ -44,7 +45,7 @@ export const ProjectPage = () => {
 
   const sizes = useSizes({
     iframe: iframeRef,
-  });
+  })
 
   useEffect(() => {
     if (!status) {
@@ -52,42 +53,37 @@ export const ProjectPage = () => {
     }
     return () => {
       projectActions.resetData();
-    };
+    }
   }, [id, dispatch, status]);
 
   return (
     data && (
       <Wrapper>
-        <ResultWrapper>
-          <Title>
-            Project "{data.name}"
-            <Link to={`/project/${id}/fullscreen`}>
-              
-              <Button variant="primary"> Demo of {data.name}</Button>
-            </Link>
-          </Title>
+      <ResultWrapper>
+        <Title>
+          Project "{data.name}"
+          <Link to={`/project/${id}/fullscreen`}>
+            <Button variant="primary">Demo of {data.name}</Button>
+          </Link> 
+        </Title>
 
-          <IframeContainer ref={iframeRef}>
-      
-            <iframe
-              title="result"
-              src={`/project/${id}/fullscreen`}
-              style={{
-                transform: `scale(${
-                  sizes.iframe.width
-                    ? sizes.iframe.width / window.innerWidth
-                    : 1
-                })`,
-                transformOrigin: "top left",
-                width: `${(window.innerWidth / sizes.iframe.width) * 100}%`,
-                height: `${(window.innerWidth / sizes.iframe.width) * 100}%`,
-              }}
-            />
-          </IframeContainer>
-        </ResultWrapper>
+        <IframeContainer ref={iframeRef}>
+          <iframe
+            title="result"
+            src={`/project/${id}/fullscreen`}
+            style={{ 
+              transform: `scale(${sizes.iframe.width ? sizes.iframe.width / window.innerWidth : 1})`,
+              transformOrigin: 'top left',
+              width: `${window.innerWidth / sizes.iframe.width * 100}%`,
+              height: `${window.innerWidth / sizes.iframe.width * 100}%`
+            }}
+          />
+        </IframeContainer>
+
+      </ResultWrapper>
 
         <ProjectSettings blocks={data.blocks} />
       </Wrapper>
     )
-  );
-};
+  )
+}

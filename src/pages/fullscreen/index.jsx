@@ -1,25 +1,25 @@
-import { useDispatch, useSelector } from "react-redux";
-import { projectActions } from "../../store/project/slices";
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { CoBlock } from "../../constructor/block";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux"
+import { projectActions } from "../../store/project/slices"
+import { useEffect } from "react"
+import { useParams } from "react-router-dom"
+import { CoBlock } from "../../constructor/block"
+import styled from "styled-components"
+import { Link } from "react-router-dom"
 
 export const ProjectFullScreenPage = () => {
-  const data = useSelector((state) => state.project.data);
-  const { status } = useSelector((state) => state.project.getData);
-  const dispatch = useDispatch();
-  const { id } = useParams();
+  const data = useSelector(state => state.project.data)
+  const { status } = useSelector(state => state.project.getData)
+  const dispatch = useDispatch()
+  const { id } = useParams()
 
   useEffect(() => {
     if (!status) {
-      dispatch(projectActions.getData(id));
+      dispatch(projectActions.getData(id))
     }
     return () => {
-      projectActions.resetData();
+      projectActions.resetData()
     };
-  }, [id, dispatch, status]);
+  }, [id, dispatch, status])
 
   const LinkGoHome = styled.div`
     width: 100%;
@@ -43,19 +43,25 @@ export const ProjectFullScreenPage = () => {
     & p {
       color: #f5f513;
     }
-  `;
+  `
 
   return (
     data && (
       <div>
         <LinkGoHome>
           <Link to="/">⭠ Go to home page</Link>
-          <p>This is the fullscreen version of progect</p>
+          <p>This is the fullscreen version of project</p>
         </LinkGoHome>
 
-        {data.blocks.map((block) => (
-          <CoBlock key={block.id} name={block.name} data={block.data} />
-        ))}
+        {
+        data.blocks.map((block) => (
+          <CoBlock 
+           key={block.id}
+           name={block.name}
+           data={block.data} 
+           />
+        ))
+        }
       </div>
     )
   );
