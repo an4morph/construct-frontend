@@ -8,6 +8,9 @@ import { useDispatch } from "react-redux"
 import { authActions } from "../../store/auth/slices"
 import { LineLink } from "../line-link"
 
+import { media } from "../../styles/adaptive"
+import { DevBurgerIcon } from "../icons/dev"
+
 const HeaderWrapper = styled.header`
   background-color: #fff;
   width: 100%;
@@ -20,6 +23,13 @@ const Content = styled(Container)`
   justify-content: space-between;
   align-items: center;
   height: 100%;
+
+  ${media.sm`
+  & div {
+    display: flex;
+    align-items: center;
+  }
+  `}
 `
 const Left = styled.div`
   display: flex;
@@ -28,9 +38,41 @@ const Left = styled.div`
 `
 const LogoutButton = styled(Button)`
   margin-left: 40px;
+
+  ${media.xs`
+    display: none;
+  `}
+  ${media.sm`
+    display: block;
+  `}
+
 `
 const LeftLink = styled(LineLink)`
   margin-left: 40px;
+
+  ${media.xs`
+    display: none;
+  `}
+  ${media.sm`
+    display: flex;
+  `}
+`
+
+const BurgerBtn = styled(Button)`
+    
+  ${media.xs`
+    display: flex;
+    align-items: center;
+
+    & svg path:hover {
+      fill: white;
+    }
+  `}
+
+  ${media.sm`
+    display: none;
+  `
+  }
 `
 
 export const Header = forwardRef((props, ref) => {
@@ -59,6 +101,12 @@ export const Header = forwardRef((props, ref) => {
           >
             Log out
           </LogoutButton>
+          
+          <BurgerBtn 
+            variant="icon" 
+            icon={<DevBurgerIcon />}
+          />
+
         </div>
       </Content>
     </HeaderWrapper>
