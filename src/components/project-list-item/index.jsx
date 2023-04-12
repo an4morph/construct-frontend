@@ -20,13 +20,13 @@ const Name = styled.div`
 
 const Date = styled.div`
   font-size: 18px;
+  display: flex;
+  align-items: center;
 `
 const StyledCalendarIcon = styled(CalendarIcon)`
   color: gray;
   width: 23px;
   height: 23px;
-  display: flex;
-  align-items: center;
 `
 export const ProjectListItem = ({ id, name, createdAt }) => {
   return (
