@@ -24,9 +24,9 @@ const Date = styled.div`
   align-items: center;
 `
 const StyledCalendarIcon = styled(CalendarIcon)`
-  color: gray;
+  color: ${({ theme }) => theme.colors.dev.icon};
   width: 23px;
-  height: 23px;
+  height: 23px
 `
 export const ProjectListItem = ({ id, name, createdAt }) => {
   return (
