@@ -1,8 +1,6 @@
 import { forwardRef } from "react"
 import styled from "styled-components"
 import { Container } from "../../styles/adaptive"
-// import { Button } from "../button"
-// import { Link } from "react-router-dom"
 
 const FooterWrapper = styled.footer`
   background-color: ${({ theme }) => theme.colors.footer.bg};
@@ -17,6 +15,25 @@ const Content = styled(Container)`
 const TagA = styled.a`
   margin-left: 6px;
   margin-right: 6px;
+  text-decoration: none;
+  position: relative;
+  &.active {
+    color: ${({ theme }) => theme.colors.primary};
+  }
+  &::after {
+    transition: all 250ms;
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: ${({ theme }) => theme.colors.primary};
+  }
+  &:hover::after {
+    transition: all 250ms;
+    width: 100%;
+  }
 `
 
 export const Footer = forwardRef((props, ref) => {
