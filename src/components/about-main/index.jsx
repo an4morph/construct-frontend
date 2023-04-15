@@ -1,22 +1,5 @@
-import styled, { css } from "styled-components"
-
-const breakpoints = {
-  xs: 0,
-  sm: 576,
-  md: 768,
-  lg: 992,
-  xl: 1200,
-  xxl: 1400,
-}
-
-const media = Object.keys(breakpoints).reduce((acc, label) => {
-  acc[label] = (...args) => css`
-    @media (min-width: ${breakpoints[label]}px) {
-      ${css(...args)}
-    }
-  `
-  return acc;
-}, {})
+import styled from 'styled-components';
+import { media } from '../../styles/adaptive';
 
 const Container = styled.div`
   display: flex;
