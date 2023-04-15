@@ -9,7 +9,7 @@ import { authActions } from "../../store/auth/slices"
 import { LineLink } from "../line-link"
 
 import { media } from "../../styles/adaptive"
-import { DevBurgerIcon } from "../icons/dev"
+import { BurgerIcon } from "../icons/dev"
 
 const HeaderWrapper = styled.header`
   background-color: #fff;
@@ -24,13 +24,14 @@ const Content = styled(Container)`
   align-items: center;
   height: 100%;
 
-  ${media.sm`
+  ${media.md`
   & div {
     display: flex;
     align-items: center;
   }
   `}
 `
+
 const Left = styled.div`
   display: flex;
   justify-content: space-between;
@@ -38,23 +39,19 @@ const Left = styled.div`
 `
 const LogoutButton = styled(Button)`
   margin-left: 40px;
-
-  ${media.xs`
-    display: none;
-  `}
-  ${media.sm`
+  display: none;
+  ${media.md`
     display: block;
   `}
 
 `
 const LeftLink = styled(LineLink)`
   margin-left: 40px;
-
   ${media.xs`
     display: none;
   `}
-  ${media.sm`
-    display: flex;
+  ${media.md`
+    display: block;
   `}
 `
 
@@ -63,13 +60,11 @@ const BurgerBtn = styled(Button)`
   ${media.xs`
     display: flex;
     align-items: center;
-
-    & svg path:hover {
+  & svg path:hover {
       fill: white;
     }
   `}
-
-  ${media.sm`
+  ${media.md`
     display: none;
   `
   }
@@ -101,13 +96,8 @@ export const Header = forwardRef((props, ref) => {
           >
             Log out
           </LogoutButton>
-          
-          <BurgerBtn 
-            variant="icon" 
-            icon={<DevBurgerIcon />}
-          />
-
         </div>
+          <BurgerBtn variant="icon" icon={<BurgerIcon />} />
       </Content>
     </HeaderWrapper>
   )

@@ -13,7 +13,7 @@ export const DevIcon = ({ className }) => {
   )
 }
 
-export const DevBurgerIcon = ({ className }) => {
+export const BurgerIcon = ({ className }) => {
   return (
     <svg className={ className } width="509" height="509" viewBox="0 0 509 509" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clipPath="url(#clip0_34_4)">
