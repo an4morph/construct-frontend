@@ -11,7 +11,7 @@ const breakpoints = {
 
 const media = Object.keys(breakpoints).reduce((acc, label) => {
   acc[label] = (...args) => css`
-    @media (max-width: ${breakpoints[label]}px) {
+    @media (min-width: ${breakpoints[label]}px) {
       ${css(...args)}
     }
   `
@@ -30,9 +30,10 @@ const Container = styled.div`
   padding: 30px;
   max-width: 100%;
   margin: 0 auto;
-
+  flex-direction: column-reverse;
+ 
   ${media.lg`
-    flex-direction: column-reverse;
+    flex-direction: row;
   `}
 `
 const Title = styled.h2`
@@ -44,22 +45,23 @@ const Text = styled.p`
   font-size: 20px;
 `
 const TextContainer = styled.div`
-  padding-right: 30px;
-  
+  padding-right: 0;
+
   ${media.lg`
-    padding-right: 0;
+    padding-right: 30px;
   `}
 `
 
 const Image = styled.img`
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
   object-fit: cover;
 
   ${media.lg`
-    width: 100%;
-    height: auto;
-    margin-bottom: 15px;
+    width: 400px;
+    height: 400px;
+    margin-bottom: 0;
   `}
 `
 
