@@ -1,7 +1,7 @@
-import { DevelopmentPlug } from "../../components/plug"
+import { AboutMain } from "../../components/about-main";
 
 export const AboutPage = () => {
   return (
-    <DevelopmentPlug title="About Page" />
+    <AboutMain />
   )
 }
