@@ -24,7 +24,11 @@ const Content = styled(Container)`
   align-items: center;
   height: 100%;
 
+  ${media.xs`
+    display: none;
+  `}
   ${media.md`
+  display: flex;
   & div {
     display: flex;
     align-items: center;
@@ -39,20 +43,10 @@ const Left = styled.div`
 `
 const LogoutButton = styled(Button)`
   margin-left: 40px;
-  display: none;
-  ${media.md`
-    display: block;
-  `}
 
 `
 const LeftLink = styled(LineLink)`
   margin-left: 40px;
-  ${media.xs`
-    display: none;
-  `}
-  ${media.md`
-    display: block;
-  `}
 `
 
 const BurgerBtn = styled(Button)`
@@ -64,7 +58,15 @@ const BurgerBtn = styled(Button)`
       fill: white;
     }
   `}
-  ${media.md`
+`
+
+const MobContent = styled(Container)`
+  ${media.xs`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  `}
+    ${media.md`
     display: none;
   `
   }
@@ -97,8 +99,11 @@ export const Header = forwardRef((props, ref) => {
             Log out
           </LogoutButton>
         </div>
-          <BurgerBtn variant="icon" icon={<BurgerIcon />} />
       </Content>
+          <MobContent>
+          <NavLink to="/"><Logo /></NavLink>
+          <BurgerBtn variant="icon" icon={<BurgerIcon />} />
+          </MobContent>
     </HeaderWrapper>
   )
 })
