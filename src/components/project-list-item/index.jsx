@@ -5,7 +5,7 @@ import {media} from "../../styles/adaptive"
 const Line = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px;
   border-radius: 20px;
   width: 100%;
