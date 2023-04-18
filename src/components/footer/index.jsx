@@ -13,8 +13,6 @@ const Content = styled(Container)`
   padding: 40px;
 `
 const TagA = styled.a`
-  margin-left: 6px;
-  margin-right: 6px;
   text-decoration: none;
   position: relative;
   &.active {
@@ -40,7 +38,7 @@ export const Footer = forwardRef((props, ref) => {
   return (
     <FooterWrapper ref={ref}>
       <Content>
-        Polina's <TagA href="https://codifylab.com/" target="_blank">students</TagA> 2023 :&#x29; &copy;
+        Polina's&nbsp;<TagA href="https://codifylab.com/" target="_blank">students</TagA>&nbsp; 2023 :&#x29; &copy;
       </Content>
     </FooterWrapper>
   )
