@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { projectListActions } from "../../store/project-list/slices"
 import { ProjectListItem } from '../../components/project-list-item'
 
+
 const Title = styled.h2`
   font-size: 20px;
   margin-bottom: 20px;
@@ -11,6 +12,9 @@ const Title = styled.h2`
 const Grid = styled.div`
   font-size: 20px;
   margin-bottom: 20px;
+  display: flex;
+  flex-wrap:wrap;
+  gap:10px;
 `
 
 export const HomePage = () => {
