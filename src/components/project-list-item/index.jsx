@@ -9,7 +9,6 @@ const Line = styled.div`
   padding: 20px;
   border-radius: 20px;
   width: 100%;
-  margin-bottom: 10px;
   background-color: #fff;
   flex-wrap:wrap;
   height:fit-content;
