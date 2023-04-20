@@ -12,6 +12,8 @@ const FormContainer = styled.form`
   padding: 30px;
   border-radius: 30px;
   width: 100%;
+  margin-top: 100px;
+  margin-bottom: 100px;
 
   ${media.lg`
     width: 600px;
